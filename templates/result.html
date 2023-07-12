@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Resultado - WhatsApp Link Generator</title>
+  <meta name="description" content="Página de resultado do gerador de links para WhatsApp">
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- CSS Customizado -->
+  <style>
+    .bg-custom {
+      background-color: #007bff ; 
+    }
+    
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="static\logo.png" alt="WhatsApp Link Generator" width="50" height="50">
+        WhatsApp Link Generator
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="index.html">Home</a>
+          <a class="nav-item nav-link" href="about.html">Sobre</a>
+          <a class="nav-item nav-link" href="contact.html">Contato</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="bg-custom text-white text-center">
+      <div class="container py-5">
+        <h1>Link Gerado</h1>
+        <p id="link">{{link}}</p>
+        <button onclick="copyLink()" class="btn btn-light">Copiar Link</button>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-dark text-white mt-5 py-3">
+    <div class="container">
+      <p class="text-center">WhatsApp Link Generator © 2022</p>
+    </div>
+  </footer>
+
+  <script>
+    function copyLink() {
+      let link = document.getElementById("link").innerText;
+      navigator.clipboard.writeText(link);
+    }
+  </script>
+
+</body>
+
+</html>
